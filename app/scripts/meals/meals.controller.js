@@ -9,7 +9,7 @@
      * Controller for meal list
      */
     angular
-        .module('jstestApp')
+        .module('jstestApp.meals')
         .controller('MealsCtrl', MealsCtrl);
 
     MealsCtrl.$inject = [];
