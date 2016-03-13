@@ -1,16 +1,16 @@
 (function () {
     'use strict';
 
-    var core = angular.module('jstestApp.core');
+    var main = angular.module('jstestApp.main');
 
-    core.config(configure);
+    main.config(configure);
 
     configure.$inject = ['$routeProvider'];
     /* @ngInject */
     function configure($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'views/main.html',
+                templateUrl: 'scripts/main/main.html',
                 controller: 'MainCtrl',
                 controllerAs: 'mainC'
             })

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jstestApp.core')
+        .module('jstestApp.main')
         .factory('CartService', CartService);
 
     CartService.$inject = ['$cookieStore'];
@@ -44,17 +44,39 @@
             if (!found) {
                 meal.quantity = 1;
                 cart.items.push(meal);
+                addToCoursesCount(meal.tags);
             }
-            updateCoursesCount(meal.tags);
             cart.cartTotal += parseFloat(meal.price);
             persistToCookie();
         }
-
-        function updateCoursesCount (item) {
+/*
+        function removeFromCart (meal) {
+            angular.forEach(cart.items, function(item, key){
+                if (item.id == meal.id) {
+                    if (cart.items[key].quantity > 0) {
+                        cart.items[key].quantity--;
+                    } else {
+                        removeFromCoursesCount(meal.tags);
+                    }
+                }
+            });
+            cart.cartTotal -= parseFloat(meal.price);
+            persistToCookie();
+        }
+*/
+        function addToCoursesCount (item) {
             if (item.indexOf("#course:main_courses") != -1) {
                 cart.mainCount++;
             } else {
                 cart.otherCount++;
+            }
+        }
+
+        function removeFromCoursesCount (item) {
+            if (item.indexOf("#course:main_courses") != -1) {
+                if (cart.mainCount > 0) cart.mainCount--;
+            } else {
+                if (cart.otherCount > 0) cart.otherCount--;
             }
         }
 

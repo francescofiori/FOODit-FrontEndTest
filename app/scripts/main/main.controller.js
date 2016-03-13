@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jstestApp.core')
+        .module('jstestApp.main')
         .controller('MainCtrl', MainCtrl);
 
     MainCtrl.$inject = ['MenuService', 'CartService'];

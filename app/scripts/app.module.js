@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('jstestApp', [
-        'jstestApp.core',
+        'jstestApp.main',
         'jstestApp.meals',
         'jstestApp.header'
     ]);

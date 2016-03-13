@@ -1,12 +1,36 @@
 .header
     position: fixed
-    top: 0
+    bottom: calc(100% - 60px)
     z-index: 500
     background-color: RGB(200, 59, 60)
     width: 100%
+    overflow: hidden
+    height: 100%
+    display: flex
+    flex-direction: column
+    transition: bottom 1s
+    &.open
+        bottom: 0
+
+.header-title
+    order: 1
+    height: 100px
+    padding: 20px
+    box-sizing: border-box
+    color: white
+    p
+        font-style: italic
+        font-size: 0.8em
+
+.header-orders
+    order: 2
+    flex: auto
+    border-bottom: solid 1px RGB(215, 80, 80)
+
+.header-bar
     text-align: center
     height: 60px
-
+    order: 3
     h3
         font-size: 0.75em
         line-height: 30px
@@ -22,6 +46,9 @@
 .header-courses-count
     padding: 0 10px
     float: left
+    color: RGB(153, 25, 52) !important
+    font-style: italic
 
 .header-courses-count-no-margin
     margin-left: -5px !important
+

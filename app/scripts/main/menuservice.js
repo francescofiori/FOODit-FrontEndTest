@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jstestApp.core')
+        .module('jstestApp.main')
         .factory('MenuService', MenuService);
 
     MenuService.$inject = ['$http'];
