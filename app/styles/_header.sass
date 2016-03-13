@@ -14,18 +14,22 @@
 
 .header-title
     order: 1
-    height: 100px
-    padding: 20px
+    padding: 20px 20px 10px
     box-sizing: border-box
     color: white
     p
         font-style: italic
         font-size: 0.8em
 
-.header-orders
+.header-order
     order: 2
     flex: auto
     border-bottom: solid 1px RGB(215, 80, 80)
+    padding: 10px 20px
+    p
+        color: RGB(128, 0, 0)
+        font-style: italic
+        font-size: 0.75em
 
 .header-bar
     text-align: center
@@ -66,3 +70,32 @@
     font-size: 1.1em
     font-style: italic
     color: RGB(220, 2, 27)
+
+.order-main-items
+    border: solid 1px RGB(194, 24, 46)
+
+.order-item
+    display: flex
+    border-bottom: solid 1px RGB(194, 24, 46)
+
+.order-item-quantity
+    background-color: RGB(200, 59, 60)
+    display: flex
+    flex-direction: column
+    text-align: center
+    align-items: stretch
+
+.order-item-description
+    background-color: RGB(209, 81, 77)
+    padding: 15px
+    color: white
+    flex: auto
+
+.order-item-price
+    background-color: RGB(209, 81, 77)
+    padding: 15px
+    color: white
+
+.order-main-items-container
+    max-height: 200px
+    overflow: hidden

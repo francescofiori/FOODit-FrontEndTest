@@ -3,8 +3,21 @@
         <h3>Your order</h3>
         <p>A Delicious Restaurant</p>
     </div>
-    <div class="header-orders">
-        ordini
+    <div class="header-order">
+        <p>3 mains</p>
+        <div class="order-main-items-container">
+            <div class="order-main-items">
+                <div class="order-item" ng-repeat="item in mainC.cart.items">
+                    <div class="order-item-quantity">
+                        <div style="color: RGB(166, 26, 43)">+</div>
+                        <div style="color: white; width: 20px">{{ item.quantity }}</div>
+                        <div style="color: RGB(166, 26, 43)">-</div>
+                    </div>
+                    <div class="order-item-description">{{ item.name }}</div>
+                    <div class="order-item-price">£{{ item.price * item.quantity | number: 2}}</div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="header-bar" ng-click="openOrders = !openOrders">
         <h3 class="text-muted" ng-if="mainC.cart.items.length == 0">It's time to order some delicious food</h3>
