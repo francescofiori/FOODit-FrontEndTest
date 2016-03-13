@@ -3,7 +3,7 @@
         Your Delicious Restaurant
     </h1>
     <ul class="meals">
-        <li class="meal" ng-repeat="meal in menu.meals" style="background-image: url({{meal.primaryImageUrl}}); flex-direction: column-reverse;">
+        <li class="meal" ng-repeat="meal in main.menu.meals" style="background-image: url({{meal.primaryImageUrl}}); flex-direction: column-reverse;">
             <p class="price">£{{meal.price}}</p>
             <h4 class="name">{{meal.name}}</h4>
             <div class="tag-container" ng-if="mc.checkTagContainer(meal.tags)">
@@ -24,7 +24,8 @@
                 <img ng-if="mc.checkTags(meal.tags, 'vegetarian')" src="images/tag--vegetarian.svg">
             </div>
             <div class="meal--text">
-                <p class="description">{{meal.description}}</p>
+                <p ng-if="!meal.full && (meal.description.split('.').length - 1) > 1" class="description">{{meal.description | wordFilter}} <img ng-click="meal.full = true" src="images/expand-button.svg"></p>
+                <p ng-if="!(meal.description.split('.').length - 1) || (meal.description.split('.').length - 1) == 1 || meal.full" class="description">{{meal.description}}</p>
                 <div class="add-to-chart-btn" ng-click="mc.addToCart(meal.id)">Add To Your Order</div>
             </div>
         </li>

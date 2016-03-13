@@ -5,19 +5,18 @@
         .module('jstestApp.core')
         .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = ['$scope', 'MenuService'];
+    MainCtrl.$inject = ['MenuService'];
     /* @ngInject */
-    function MainCtrl($scope, MenuService) {
+    function MainCtrl(MenuService) {
         var vm = this;
 
-        $scope.menu = {};
+        vm.menu = {};
 
         activate();
 
         function activate() {
-            console.log('ciao');
             MenuService.get('/data/menu.json').success(function(data) {
-                $scope.menu = data;
+                vm.menu = data;
             });
         }
     }
