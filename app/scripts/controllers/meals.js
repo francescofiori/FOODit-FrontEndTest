@@ -1,32 +1,50 @@
 (function () {
-  'use strict';
+    'use strict';
 
-  /**
-   * @ngdoc function
-   * @name jstestApp.controller:MealsCtrl
-   * @description
-   * # MealsCtrl
-   * Controller for meal list
-   */
-  angular
-    .module('jstestApp')
-    .controller('MealsCtrl', MealsCtrl);
+    /**
+     * @ngdoc function
+     * @name jstestApp.controller:MealsCtrl
+     * @description
+     * # MealsCtrl
+     * Controller for meal list
+     */
+    angular
+        .module('jstestApp')
+        .controller('MealsCtrl', MealsCtrl);
 
-  MealsCtrl.$inject = ['$scope'];
-  /* @ngInject */
-  function MealsCtrl($scope) {
-    var vm = this;
+    MealsCtrl.$inject = [];
+    /* @ngInject */
+    function MealsCtrl() {
+        var vm = this;
+        var tagsWithImg = ["charcoal", "cheese", "chicken", "grilled", "high-protein", "lamb", "pasta", "peanut", "pork", "seafood", "snack", "spicy", "starter", "sweet", "vegetarian"];
 
-    activate();
+        activate();
 
-    vm.addToCart = addToCart;
+        vm.addToCart = addToCart;
+        vm.checkTags = checkTags;
+        vm.checkTagContainer = checkTagContainer;
 
-    function activate() {
-      console.log('ciao');
+        function activate() {
+
+        }
+
+        function addToCart (mealId) {
+            console.log(mealId);
+        }
+
+        function checkTags (tags, tag) {
+            return tags.indexOf(tag) != -1;
+        }
+
+        function checkTagContainer (tags) {
+            var found = false;
+            angular.forEach(tagsWithImg, function (tag) {
+                if (tags.indexOf(tag) != -1) {
+                    console.log('trovate');
+                    found = true;
+                }
+            });
+            return found;
+        }
     }
-
-    function addToCart (mealId) {
-      console.log(mealId);
-    }
-  }
 })();

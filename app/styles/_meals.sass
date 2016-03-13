@@ -1,50 +1,62 @@
 .meals
-  padding: 20px
-  background-color: RGB(247, 247, 247)
-  list-style-type: none
+    padding: 20px
+    background-color: RGB(247, 247, 247)
+    list-style-type: none
 
 .meal
-  border: solid 1px RGB(232, 232, 232)
-  border-radius: 3px
-  margin-bottom: 20px
-  background: RGB(255, 255, 255) no-repeat top center
-  -webkit-background-size: cover
-  -moz-background-size: cover
-  -o-background-size: cover
-  background-size: cover
-  height: 200px
-  color: RGB(119, 119, 138)
-  position: relative
+    border: solid 1px RGB(232, 232, 232)
+    border-radius: 3px
+    margin-bottom: 20px
+    background: RGB(255, 255, 255) no-repeat top center
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    height: 300px
+    color: RGB(119, 119, 138)
+    position: relative
+    display: flex
+    flex-direction: column-reverse
 
 .add-to-chart-btn
-  border-radius: 3px
-  background-color: $blue
-  color: RGB(255, 255, 255)
-  font-style: italic
-  text-align: center
-  padding: 5px
+    border-radius: 3px
+    background-color: $blue
+    color: RGB(255, 255, 255)
+    font-style: italic
+    text-align: center
+    padding: 5px
+    margin-top: 10px
 
 .price
-  background-color: $blue
-  display: inline
-  color: white
-  font-style: italic
-  padding: 5px 10px
-  border-radius: 0 0 3px 3px
-  position: absolute
-  top: 0
-  left: 50%
+    background-color: $blue
+    display: inline
+    color: white
+    font-style: italic
+    padding: 5px 10px
+    border-radius: 0 0 3px 3px
+    position: absolute
+    top: 0
+    left: 50%
 
 .meal--text
-  background-color: white
-  padding: 15px
-  position: absolute
-  width: 100%
-  bottom: 0
-  box-sizing: border-box
+    background-color: white
+    padding: 25px 15px 15px
+    order: 1
+    border-top-left-radius: 100% 30px
+    border-top-right-radius: 100% 30px
 
 .name
-  width: 100%
-  background-color: black
-  border-bottom-left-radius: 100%30px
-  border-bottom-right-radius: 100%30px
+    border-top-left-radius: 100% 30px
+    border-top-right-radius: 100% 30px
+    order: 3
+    color: RGB(96, 96, 96)
+    background-color: rgba(256, 256, 256, 0.5)
+    text-align: center
+    padding: 20px 0 35px
+    margin-bottom: -15px
+
+.tag-container
+    margin: -15px
+    text-align: center
+    order: 2
+
