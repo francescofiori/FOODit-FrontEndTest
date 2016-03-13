@@ -12,9 +12,9 @@
         .module('jstestApp.meals')
         .controller('MealsCtrl', MealsCtrl);
 
-    MealsCtrl.$inject = [];
+    MealsCtrl.$inject = ['CartService'];
     /* @ngInject */
-    function MealsCtrl() {
+    function MealsCtrl(CartService) {
         var vm = this;
         var tagsWithImg = ["charcoal", "cheese", "chicken", "grilled", "high-protein", "lamb", "pasta", "peanut", "pork", "seafood", "snack", "spicy", "starter", "sweet", "vegetarian"];
 
@@ -28,8 +28,8 @@
 
         }
 
-        function addToCart (mealId) {
-            console.log(mealId);
+        function addToCart (meal) {
+            CartService.addToCart(meal);
         }
 
         function checkTags (tags, tag) {

@@ -1,5 +1,8 @@
 <div class="header">
-    <h3 class="text-muted">It's time to order some delicious food</h3>
+    <h3 class="text-muted" ng-if="mainC.cart.items.length == 0">It's time to order some delicious food</h3>
+    <h3 class="text-muted header-courses-count" ng-if="mainC.cart.mainCount > 0">{{ mainC.cart.mainCount }} main</h3>
+    <h3 class="text-muted header-courses-count" ng-if="mainC.cart.otherCount > 0" ng-class="{'header-courses-count-no-margin': mainC.cart.mainCount > 0}">{{ mainC.cart.otherCount }} other</h3>
+    <h3 class="text-muted header-price" ng-if="mainC.cart.items.length > 0">£{{ mainC.cart.cartTotal | number:2 }}</h3>
 </div>
 
 <div ng-controller="MealsCtrl as mealsC" class="meals-container">
@@ -30,7 +33,7 @@
             <div class="meal--text">
                 <p ng-if="!meal.full && (meal.description.split('.').length - 1) > 1" class="description">{{meal.description | wordFilter}} <img ng-click="meal.full = true" src="images/expand-button.svg"></p>
                 <p ng-if="!(meal.description.split('.').length - 1) || (meal.description.split('.').length - 1) == 1 || meal.full" class="description">{{meal.description}}</p>
-                <div class="add-to-chart-btn" ng-click="mealsC.addToCart(meal.id)">Add To Your Order</div>
+                <div class="add-to-chart-btn" ng-click="mealsC.addToCart(meal)">Add To Your Order</div>
             </div>
         </li>
     </ul>
