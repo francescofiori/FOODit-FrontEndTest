@@ -1,4 +1,4 @@
-<section ng-controller="MealsCtrl">
+<section ng-controller="MealsCtrl as mc">
   <h1>
     Your Delicious Restaurant
   </h1>
@@ -8,7 +8,7 @@
         <h4 class="name">{{meal.name}}</h4>
         <div class="meal--text">
           <p class="description">{{meal.description}}</p>
-          <div class="add-to-chart-btn" ng-click="addToCart(meal.id)">Add To Your Order</div>
+          <div class="add-to-chart-btn" ng-click="mc.addToCart(meal.id)">Add To Your Order</div>
         </div>
       </li>
   </ul>
