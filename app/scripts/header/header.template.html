@@ -8,14 +8,13 @@
     </div>
     <div class="header-bar" ng-click="openOrders = !openOrders">
         <h3 class="text-muted" ng-if="mainC.cart.items.length == 0">It's time to order some delicious food</h3>
-        <!--
-            <button class="text-muted" ng-if="mainC.cart.mainCount > 0 && openOrders">Confirm Your Order</button>
-            <h3 class="text-muted header-courses-count" ng-if="mainC.cart.mainCount > 0 && !openOrders">{{ mainC.cart.mainCount }} main</h3>
-            <h3 class="text-muted header-courses-count" ng-if="mainC.cart.otherCount > 0 && !openOrders" ng-class="{'header-courses-count-no-margin': mainC.cart.mainCount > 0}">{{ mainC.cart.otherCount }} other</h3>
-        -->
-        <div style="display: flex; flex-direction: row">
-        <button class="text-muted" ng-if="mainC.cart.mainCount > 0 && openOrders" style="order:1">Confirm Your Order</button>
-        <h3 class="text-muted header-price" ng-if="mainC.cart.items.length > 0" style="order:2">£{{ mainC.cart.cartTotal | number:2 }}</h3>
+        <div class="header-btn-container">
+            <button class="text-muted header-confirm-btn" ng-if="mainC.cart.mainCount > 0 && openOrders">Confirm Your Order</button>
+            <div ng-if="mainC.cart.mainCount > 0 && !openOrders">
+                <h3 class="text-muted header-courses-count">{{ mainC.cart.mainCount }} main</h3>
+                <h3 class="text-muted header-courses-count" ng-class="{'header-courses-count-no-margin': mainC.cart.mainCount > 0}">{{ mainC.cart.otherCount }} other</h3>
+            </div>
+            <h3 class="text-muted header-price" ng-if="mainC.cart.items.length > 0" style="order:2; margin: 14px 20px 14px 10px;">£{{ mainC.cart.cartTotal | number:2 }}</h3>
         </div>
     </div>
 </div>

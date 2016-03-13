@@ -31,12 +31,12 @@
     text-align: center
     height: 60px
     order: 3
-    h3
+    h3, div h3
         font-size: 0.75em
         line-height: 30px
         border: solid 1px RGB(194, 24, 46)
         background-color: RGB(215, 80, 80)
-        margin: 14px 20px
+        margin: 14px 20px 14px 20px
         color: white
 
 .header-price
@@ -52,3 +52,17 @@
 .header-courses-count-no-margin
     margin-left: -5px !important
 
+.header-btn-container
+    display: flex
+    flex-direction: row
+    div
+        order: 1
+        flex: auto
+
+.header-confirm-btn
+    order: 1
+    flex: auto
+    margin: 14px 10px 14px 20px
+    font-size: 1.1em
+    font-style: italic
+    color: RGB(220, 2, 27)
