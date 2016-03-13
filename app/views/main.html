@@ -1,10 +1,10 @@
-<section ng-controller="MealsCtrl as mc">
+<div ng-controller="MealsCtrl as mc" class="meals-container">
     <h1>
         Your Delicious Restaurant
     </h1>
     <ul class="meals">
         <li class="meal" ng-repeat="meal in menu.meals" style="background-image: url({{meal.primaryImageUrl}}); flex-direction: column-reverse;">
-            <p class="price">{{meal.price}}</p>
+            <p class="price">£{{meal.price}}</p>
             <h4 class="name">{{meal.name}}</h4>
             <div class="tag-container" ng-if="mc.checkTagContainer(meal.tags)">
                 <img ng-if="mc.checkTags(meal.tags, 'charcoal')" src="images/tag--charcoal.svg">
@@ -29,4 +29,4 @@
             </div>
         </li>
     </ul>
-</section>
+</div>

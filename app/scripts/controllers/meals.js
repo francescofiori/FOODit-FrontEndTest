@@ -40,7 +40,6 @@
             var found = false;
             angular.forEach(tagsWithImg, function (tag) {
                 if (tags.indexOf(tag) != -1) {
-                    console.log('trovate');
                     found = true;
                 }
             });

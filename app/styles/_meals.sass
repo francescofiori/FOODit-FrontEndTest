@@ -1,12 +1,12 @@
 .meals
-    padding: 20px
-    background-color: RGB(247, 247, 247)
     list-style-type: none
+    li:last-child
+        margin-bottom: 0
 
 .meal
     border: solid 1px RGB(232, 232, 232)
     border-radius: 3px
-    margin-bottom: 20px
+    margin-bottom: 25px
     background: RGB(255, 255, 255) no-repeat top center
     -webkit-background-size: cover
     -moz-background-size: cover
@@ -45,6 +45,9 @@
     order: 1
     border-top-left-radius: 100% 30px
     border-top-right-radius: 100% 30px
+    p
+        font-size: 0.75em
+        line-height: 1.4em
 
 .name
     border-top-left-radius: 100% 30px
@@ -55,9 +58,18 @@
     text-align: center
     padding: 20px 0 35px
     margin-bottom: -15px
+    font-size: 1em
 
 .tag-container
     margin: -15px
     text-align: center
     order: 2
 
+.meals-container
+    margin-top: 60px
+    padding: 20px
+    background-color: RGB(247, 247, 247)
+    h1
+        font-size: 1.125em
+        color: RGB(119, 119, 119)
+        font-weight: bold
