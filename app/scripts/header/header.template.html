@@ -1,0 +1,6 @@
+<div class="header">
+    <h3 class="text-muted" ng-if="mainC.cart.items.length == 0">It's time to order some delicious food</h3>
+    <h3 class="text-muted header-courses-count" ng-if="mainC.cart.mainCount > 0">{{ mainC.cart.mainCount }} main</h3>
+    <h3 class="text-muted header-courses-count" ng-if="mainC.cart.otherCount > 0" ng-class="{'header-courses-count-no-margin': mainC.cart.mainCount > 0}">{{ mainC.cart.otherCount }} other</h3>
+    <h3 class="text-muted header-price" ng-if="mainC.cart.items.length > 0">£{{ mainC.cart.cartTotal | number:2 }}</h3>
+</div>

@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('jstestApp.meals', []);
+        .module('jstestApp.header', []);
 })();

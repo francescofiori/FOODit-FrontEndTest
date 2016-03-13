@@ -3,7 +3,7 @@
 
     angular.module('jstestApp', [
         'jstestApp.core',
-        'jstestApp.meals'
+        'jstestApp.meals',
+        'jstestApp.header'
     ]);
-
 })();
