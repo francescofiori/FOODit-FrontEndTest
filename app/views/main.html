@@ -1,8 +1,15 @@
-<ul class="meals">
-    <li class="meal" ng-repeat="meal in menu.meals">
-        <h4 class="name">{{meal.name}}</h4>
-        <img class="image" ng-src="{{meal.primaryImageUrl}}">
-        <p class="description">{{meal.description}}</p>
+<section ng-controller="MealsCtrl">
+  <h1>
+    Your Delicious Restaurant
+  </h1>
+  <ul class="meals">
+      <li class="meal" ng-repeat="meal in menu.meals" style="background-image: url({{meal.primaryImageUrl}})">
         <p class="price">{{meal.price}}</p>
-    </li>
-</ul>
+        <h4 class="name">{{meal.name}}</h4>
+        <div class="meal--text">
+          <p class="description">{{meal.description}}</p>
+          <div class="add-to-chart-btn" ng-click="addToCart(meal.id)">Add To Your Order</div>
+        </div>
+      </li>
+  </ul>
+</section>
