@@ -3,10 +3,10 @@
 
     /**
      * @ngdoc function
-     * @name jstestApp.controller:MealsCtrl
+     * @name jstestApp.meals.filter:wordFilter
      * @description
-     * # MealsCtrl
-     * Controller for meal list
+     * # wordFilter
+     * Filter for cutting meals' descriptions
      */
     angular
         .module('jstestApp.meals')

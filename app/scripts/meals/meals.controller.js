@@ -3,7 +3,7 @@
 
     /**
      * @ngdoc function
-     * @name jstestApp.controller:MealsCtrl
+     * @name jstestApp.meals.controller:MealsCtrl
      * @description
      * # MealsCtrl
      * Controller for meal list
