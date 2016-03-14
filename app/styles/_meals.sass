@@ -1,0 +1,79 @@
+.meals
+    list-style-type: none
+    li:last-child
+        margin-bottom: 0
+
+.meal
+    border: solid 1px RGB(232, 232, 232)
+    border-radius: 3px
+    margin-bottom: 25px
+    background: RGB(255, 255, 255) no-repeat top center
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    height: 300px
+    color: RGB(119, 119, 138)
+    position: relative
+    display: flex
+    flex-direction: column-reverse
+
+.add-to-chart-btn
+    border-radius: 3px
+    background-color: $blue
+    color: RGB(255, 255, 255)
+    font-style: italic
+    text-align: center
+    padding: 5px
+    margin-top: 10px
+    border: none
+    width: 100%
+    font-size: 1em
+    display: block
+
+.price
+    background-color: $blue
+    display: inline
+    color: white
+    font-style: italic
+    padding: 5px 10px
+    border-radius: 0 0 3px 3px
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translate(-50%, 0)
+
+.meal--text
+    background-color: white
+    padding: 25px 15px 15px
+    order: 1
+    border-top-left-radius: 100% 30px
+    border-top-right-radius: 100% 30px
+    p
+        font-size: 0.75em
+        line-height: 1.4em
+
+.name
+    border-top-left-radius: 100% 30px
+    border-top-right-radius: 100% 30px
+    order: 3
+    color: RGB(96, 96, 96)
+    background-color: rgba(256, 256, 256, 0.8)
+    text-align: center
+    padding: 20px 0 35px
+    margin-bottom: -15px
+    font-size: 1em
+
+.tag-container
+    margin: -15px
+    text-align: center
+    order: 2
+
+.meals-container
+    margin-top: 60px
+    padding: 10px 20px
+    background-color: RGB(247, 247, 247)
+    h1
+        font-size: 1.125em
+        color: RGB(119, 119, 119)
+        font-weight: bold
