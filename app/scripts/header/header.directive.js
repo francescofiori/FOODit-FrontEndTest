@@ -5,7 +5,6 @@
         .module('jstestApp.header')
         .directive('appHeader', appHeader);
 
-    /* @ngInject */
     function appHeader () {
         var directive = {
             restrict: 'EA',
@@ -24,6 +23,7 @@
         var vm = this;
         vm.addToCart = addToCart;
         vm.removeFromCart = removeFromCart;
+        vm.confirmOrder = confirmOrder;
 
         function addToCart (meal) {
             CartService.addToCart(meal);
@@ -31,6 +31,10 @@
 
         function removeFromCart (meal) {
             CartService.removeFromCart(meal);
+        }
+
+        function confirmOrder () {
+            alert("Your order has been confirmed!");
         }
     }
 })();
