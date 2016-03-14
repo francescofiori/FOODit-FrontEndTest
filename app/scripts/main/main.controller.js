@@ -17,6 +17,7 @@
     function MainCtrl(MenuService, CartService) {
         var vm = this;
         vm.menu = {};
+        vm.cart = {};
         vm.cartHasMainItems = cartHasMainItems;
         vm.cartHasOtherItems = cartHasOtherItems;
         vm.cartHasItems = cartHasItems;

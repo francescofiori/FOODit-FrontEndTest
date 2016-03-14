@@ -42,7 +42,9 @@
         function getCart() { return cart; }
 
         function addToCart(meal) {
-            getCartFromCookie();
+            if (typeof cart == undefined || cart == null) {
+                getCartFromCookie()
+            }
             var found = false;
             angular.forEach(cart.items, function(item, key){
                 if (item.id == meal.id) {
@@ -60,7 +62,9 @@
         }
 
         function removeFromCart(meal) {
-            getCartFromCookie();
+            if (typeof cart == undefined || cart == null) {
+                getCartFromCookie()
+            }
             var itemToRemove = -1;
             angular.forEach(cart.items, function(item, key){
                 if (item.id == meal.id) {
