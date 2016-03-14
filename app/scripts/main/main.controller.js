@@ -16,8 +16,10 @@
     /* @ngInject */
     function MainCtrl(MenuService, CartService) {
         var vm = this;
-
         vm.menu = {};
+        vm.cartHasMainItems = cartHasMainItems;
+        vm.cartHasOtherItems = cartHasOtherItems;
+        vm.cartHasItems = cartHasItems;
 
         activate();
 
@@ -34,6 +36,18 @@
 
         function getCart() {
             vm.cart = CartService.getCartFromCookie();
+        }
+
+        function cartHasMainItems() {
+            return vm.cart.mainCount > 0
+        }
+
+        function cartHasOtherItems() {
+            return vm.cart.otherCount > 0
+        }
+
+        function cartHasItems() {
+            return vm.cart.items.length > 0
         }
     }
 })();
