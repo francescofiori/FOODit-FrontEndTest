@@ -1,6 +1,13 @@
 (function () {
     'use strict';
 
+    /**
+     * @ngdoc function
+     * @name jstestApp.main.factory:CartService
+     * @description
+     * # CartService
+     * Service for managing orders and the cart
+     */
     angular
         .module('jstestApp.main')
         .factory('CartService', CartService);
