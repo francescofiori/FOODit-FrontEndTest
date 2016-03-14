@@ -1,7 +1,7 @@
 <div class="header"
-     ng-class="{open: headerC.openOrders}">
+     ng-class="{openDrawer: headerC.openDrawer}">
     <div class="header-title"
-         ng-click="headerC.openOrders = !headerC.openOrders">
+         ng-click="headerC.openDrawer = !headerC.openDrawer">
         <h3>Your Order</h3>
         <p>A Delicious Restaurant</p>
     </div>
@@ -40,13 +40,13 @@
         </div>
     </div>
 
-    <div class="header-bar" ng-click="headerC.openOrders = !headerC.openOrders">
+    <div class="header-bar" ng-click="headerC.openDrawer = !headerC.openDrawer">
         <h3 class="text-muted" ng-if="mainC.cart.items.length == 0">It's time to order some delicious food</h3>
         <div class="header-btn-container">
             <button class="text-muted header-confirm-btn"
-                    ng-if="mainC.cartHasItems() && headerC.openOrders"
+                    ng-if="mainC.cartHasItems() && headerC.openDrawer"
                     ng-click="headerC.confirmOrder()">Confirm Your Order</button>
-            <div ng-if="mainC.cartHasItems() && !headerC.openOrders">
+            <div ng-if="mainC.cartHasItems() && !headerC.openDrawer">
                 <h3 class="text-muted header-courses-count"
                     ng-if="mainC.cartHasMainItems()">{{ mainC.cart.mainCount }} main</h3>
                 <h3 class="text-muted header-courses-count"
