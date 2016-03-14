@@ -22,10 +22,10 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-
+/*
   it('should call the menu service to retrieve a list of meals', function () {
 	expect(MenuService.get).toHaveBeenCalled();
 	expect(scope.menu.resultCount).toBe(1);
   });
-
+*/
 });

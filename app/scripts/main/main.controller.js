@@ -29,7 +29,7 @@
         }
 
         function getMenuItems() {
-            MenuService.get('/data/menu.json').success(function(data) {
+            MenuService.get().success(function(data) {
                 vm.menu = data;
             });
         }

@@ -3,7 +3,7 @@
 describe('Service: MenuService', function () {
 
   // load the service's module
-  beforeEach(module('jstestApp'));
+  beforeEach(module('jstestApp.main'));
 
   // instantiate service
   var MenuService, $httpBackend;
