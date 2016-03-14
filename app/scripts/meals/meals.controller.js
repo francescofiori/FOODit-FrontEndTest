@@ -18,15 +18,9 @@
         var vm = this,
             tagsWithImg = ["charcoal", "cheese", "chicken", "grilled", "high-protein", "lamb", "pasta", "peanut", "pork", "seafood", "snack", "spicy", "starter", "sweet", "vegetarian"];
 
-        activate();
-
         vm.addToCart = addToCart;
         vm.checkTags = checkTags;
         vm.checkTagContainer = checkTagContainer;
-
-        function activate() {
-
-        }
 
         function addToCart (meal) {
             CartService.addToCart(meal);
