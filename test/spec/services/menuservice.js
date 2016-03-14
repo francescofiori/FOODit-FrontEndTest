@@ -2,10 +2,8 @@
 
 describe('Service: MenuService', function () {
 
-  // load the service's module
   beforeEach(module('jstestApp'));
 
-  // instantiate service
   var MenuService, $httpBackend;
   beforeEach(inject(function ($injector) {
 	$httpBackend          = $injector.get('$httpBackend');
@@ -37,5 +35,4 @@ describe('Service: MenuService', function () {
 	});
 	$httpBackend.flush();
   });
-
 });

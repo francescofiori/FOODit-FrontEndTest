@@ -2,10 +2,8 @@
 
 describe('Service: CartService', function () {
 
-    // load the service's module
     beforeEach(module('jstestApp'));
 
-    // instantiate service
     var CartService, $cookieStore;
     beforeEach(inject(function ($injector, $cookieStore) {
         $cookieStore          = $injector.get('$cookieStore');

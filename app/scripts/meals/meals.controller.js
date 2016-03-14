@@ -22,15 +22,15 @@
         vm.checkTags = checkTags;
         vm.checkTagContainer = checkTagContainer;
 
-        function addToCart (meal) {
+        function addToCart(meal) {
             CartService.addToCart(meal);
         }
 
-        function checkTags (tags, tag) {
+        function checkTags(tags, tag) {
             return tags.indexOf(tag) != -1;
         }
 
-        function checkTagContainer (tags) {
+        function checkTagContainer(tags) {
             var found = false;
             angular.forEach(tagsWithImg, function (tag) {
                 if (tags.indexOf(tag) != -1) {

@@ -12,7 +12,7 @@
         .module('jstestApp.meals')
         .directive('meals', meals);
 
-    function meals () {
+    function meals() {
         var directive = {
             restrict: 'EA',
             templateUrl: '/scripts/meals/meals.template.html'

@@ -12,7 +12,7 @@
         .module('jstestApp.header')
         .directive('appHeader', appHeader);
 
-    function appHeader () {
+    function appHeader() {
         var directive = {
             restrict: 'EA',
             templateUrl: '/scripts/header/header.template.html'

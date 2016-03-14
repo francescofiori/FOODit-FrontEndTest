@@ -20,15 +20,15 @@
         vm.removeFromCart = removeFromCart;
         vm.confirmOrder = confirmOrder;
 
-        function addToCart (meal) {
+        function addToCart(meal) {
             CartService.addToCart(meal);
         }
 
-        function removeFromCart (meal) {
+        function removeFromCart(meal) {
             CartService.removeFromCart(meal);
         }
 
-        function confirmOrder () {
+        function confirmOrder() {
             alert("Your order has been confirmed!");
         }
     }
