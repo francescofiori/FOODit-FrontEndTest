@@ -21,7 +21,7 @@
 
         return service;
 
-        function get () {
+        function get() {
             return $http.get('/data/menu.json');
         }
     }

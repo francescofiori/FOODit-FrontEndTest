@@ -25,7 +25,7 @@
 
         return service;
 
-        function getCartFromCookie () {
+        function getCartFromCookie() {
             if (typeof $cookieStore.get('cart') == "undefined") {
                 cart = {
                     items: [],
@@ -39,9 +39,12 @@
             return cart;
         }
 
-        function getCart () { return cart; }
+        function getCart() { return cart; }
 
-        function addToCart (meal) {
+        function addToCart(meal) {
+            if (typeof cart == undefined || cart == null) {
+                getCartFromCookie()
+            }
             var found = false;
             angular.forEach(cart.items, function(item, key){
                 if (item.id == meal.id) {
@@ -58,7 +61,10 @@
             persistToCookie();
         }
 
-        function removeFromCart (meal) {
+        function removeFromCart(meal) {
+            if (typeof cart == undefined || cart == null) {
+                getCartFromCookie()
+            }
             var itemToRemove = -1;
             angular.forEach(cart.items, function(item, key){
                 if (item.id == meal.id) {
@@ -75,7 +81,7 @@
             persistToCookie();
         }
 
-        function addToCoursesCount (item) {
+        function addToCoursesCount(item) {
             if (item.indexOf("#course:main_courses") != -1) {
                 cart.mainCount++;
             } else {
@@ -83,7 +89,7 @@
             }
         }
 
-        function removeFromCoursesCount (item) {
+        function removeFromCoursesCount(item) {
             if (item.indexOf("#course:main_courses") != -1) {
                 if (cart.mainCount > 0) cart.mainCount--;
             } else {
@@ -91,6 +97,6 @@
             }
         }
 
-        function persistToCookie () { $cookieStore.put('cart', cart); }
+        function persistToCookie() { $cookieStore.put('cart', cart); }
     }
 })();

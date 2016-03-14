@@ -1,35 +1,6 @@
-<div app-header></div>
+<div app-header
+     ng-controller="HeaderCtrl as headerC"></div>
 
-<div ng-controller="MealsCtrl as mealsC" class="meals-container">
-    <h1>
-        Your Delicious Restaurant
-    </h1>
-    <ul class="meals">
-        <li class="meal" ng-repeat="meal in mainC.menu.meals" style="background-image: url({{meal.primaryImageUrl}}); flex-direction: column-reverse;">
-            <p class="price">£{{meal.price}}</p>
-            <h4 class="name">{{meal.name}}</h4>
-            <div class="tag-container" ng-if="mealsC.checkTagContainer(meal.tags)">
-                <img ng-if="mealsC.checkTags(meal.tags, 'charcoal')" src="images/tag--charcoal.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'cheese')" src="images/tag--cheese.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'chicken')" src="images/tag--chicken.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'grilled')" src="images/tag--grilled.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'high-protein')" src="images/tag--high-protein.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'lamb')" src="images/tag--lamb.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'pasta')" src="images/tag--pasta.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'peanut')" src="images/tag--peanut.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'pork')" src="images/tag--pork.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'seafood')" src="images/tag--seafood.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'snack')" src="images/tag--snack.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'spicy')" src="images/tag--spicy.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'starter')" src="images/tag--starter.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'sweet')" src="images/tag--sweet.svg">
-                <img ng-if="mealsC.checkTags(meal.tags, 'vegetarian')" src="images/tag--vegetarian.svg">
-            </div>
-            <div class="meal--text">
-                <p ng-if="!meal.full && (meal.description.split('.').length - 1) > 1" class="description">{{meal.description | wordFilter}} <img ng-click="meal.full = true" src="images/expand-button.svg"></p>
-                <p ng-if="!(meal.description.split('.').length - 1) || (meal.description.split('.').length - 1) == 1 || meal.full" class="description">{{meal.description}}</p>
-                <button class="add-to-chart-btn" ng-click="mealsC.addToCart(meal)">Add To Your Order</button>
-            </div>
-        </li>
-    </ul>
-</div>
+<div meals
+     ng-controller="MealsCtrl as mealsC"
+     class="meals-container"></div>
