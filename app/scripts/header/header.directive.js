@@ -12,7 +12,7 @@
             templateUrl: '/scripts/header/header.template.html',
             controller: HeaderCtrl,
             controllerAs: 'headerC',
-            bindToController: true // because the scope is isolated
+            bindToController: true
         };
 
         return directive;

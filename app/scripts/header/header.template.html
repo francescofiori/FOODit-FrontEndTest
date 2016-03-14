@@ -3,33 +3,39 @@
         <h3>Your order</h3>
         <p>A Delicious Restaurant</p>
     </div>
+
     <div class="header-order">
-        <p>{{ mainC.cart.mainCount }} mains</p>
-        <div class="order-main-items-container">
-            <div class="order-item" ng-repeat="item in mainC.cart.items | courseFilter:'main'">
-                <div class="order-item-quantity">
-                    <div style="color: RGB(166, 26, 43)" ng-click="headerC.addToCart(item)">+</div>
-                    <div style="color: white; width: 20px">{{ item.quantity }}</div>
-                    <div style="color: RGB(166, 26, 43)" ng-click="headerC.removeFromCart(item)">-</div>
+        <div ng-if="mainC.cart.mainCount > 0">
+            <p>{{ mainC.cart.mainCount }} mains</p>
+            <div class="order-main-items-container">
+                <div class="order-item" ng-repeat="item in mainC.cart.items | courseFilter:'main'">
+                    <div class="order-item-quantity">
+                        <div ng-click="headerC.addToCart(item)" class="header-plus">+</div>
+                        <div class="header-quantity">{{ item.quantity }}</div>
+                        <div ng-click="headerC.removeFromCart(item)" class="header-minus">-</div>
+                    </div>
+                    <div class="order-item-description">{{ item.name }}</div>
+                    <div class="order-item-price">£{{ item.price * item.quantity | number: 2}}</div>
                 </div>
-                <div class="order-item-description">{{ item.name }}</div>
-                <div class="order-item-price">£{{ item.price * item.quantity | number: 2}}</div>
             </div>
         </div>
 
-        <p>{{ mainC.cart.otherCount }} other</p>
-        <div class="order-main-items-container">
-            <div class="order-item" ng-repeat="item in mainC.cart.items | courseFilter:'other'">
-                <div class="order-item-quantity">
-                    <div style="color: RGB(166, 26, 43)" ng-click="headerC.addToCart(item)">+</div>
-                    <div style="color: white; width: 20px">{{ item.quantity }}</div>
-                    <div style="color: RGB(166, 26, 43)" ng-click="headerC.removeFromCart(item)">-</div>
+        <div ng-if="mainC.cart.otherCount > 0">
+            <p>{{ mainC.cart.otherCount }} other</p>
+            <div class="order-main-items-container">
+                <div class="order-item" ng-repeat="item in mainC.cart.items | courseFilter:'other'">
+                    <div class="order-item-quantity">
+                        <div ng-click="headerC.addToCart(item)" class="header-plus">+</div>
+                        <div class="header-quantity">{{ item.quantity }}</div>
+                        <div ng-click="headerC.removeFromCart(item)" class="header-minus">-</div>
+                    </div>
+                    <div class="order-item-description">{{ item.name }}</div>
+                    <div class="order-item-price">£{{ item.price * item.quantity | number: 2}}</div>
                 </div>
-                <div class="order-item-description">{{ item.name }}</div>
-                <div class="order-item-price">£{{ item.price * item.quantity | number: 2}}</div>
             </div>
         </div>
     </div>
+
     <div class="header-bar" ng-click="openOrders = !openOrders">
         <h3 class="text-muted" ng-if="mainC.cart.items.length == 0">It's time to order some delicious food</h3>
         <div class="header-btn-container">
@@ -38,7 +44,7 @@
                 <h3 class="text-muted header-courses-count">{{ mainC.cart.mainCount }} main</h3>
                 <h3 class="text-muted header-courses-count" ng-class="{'header-courses-count-no-margin': mainC.cart.mainCount > 0}">{{ mainC.cart.otherCount }} other</h3>
             </div>
-            <h3 class="text-muted header-price" ng-if="mainC.cart.items.length > 0" style="order:2; margin: 14px 20px 14px 10px;">£{{ mainC.cart.cartTotal | number:2 }}</h3>
+            <h3 class="text-muted header-price" ng-if="mainC.cart.items.length > 0">£{{ mainC.cart.cartTotal | number:2 }}</h3>
         </div>
     </div>
 </div>
