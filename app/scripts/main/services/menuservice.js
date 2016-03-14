@@ -1,8 +1,15 @@
 (function () {
     'use strict';
 
+    /**
+     * @ngdoc function
+     * @name jstestApp.main.factory:MenuService
+     * @description
+     * # MenuService
+     * Service for managing the menu
+     */
     angular
-        .module('jstestApp.core')
+        .module('jstestApp.main')
         .factory('MenuService', MenuService);
 
     MenuService.$inject = ['$http'];

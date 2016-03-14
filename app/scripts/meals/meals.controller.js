@@ -15,18 +15,12 @@
     MealsCtrl.$inject = ['CartService'];
     /* @ngInject */
     function MealsCtrl(CartService) {
-        var vm = this;
-        var tagsWithImg = ["charcoal", "cheese", "chicken", "grilled", "high-protein", "lamb", "pasta", "peanut", "pork", "seafood", "snack", "spicy", "starter", "sweet", "vegetarian"];
-
-        activate();
+        var vm = this,
+            tagsWithImg = ["charcoal", "cheese", "chicken", "grilled", "high-protein", "lamb", "pasta", "peanut", "pork", "seafood", "snack", "spicy", "starter", "sweet", "vegetarian"];
 
         vm.addToCart = addToCart;
         vm.checkTags = checkTags;
         vm.checkTagContainer = checkTagContainer;
-
-        function activate() {
-
-        }
 
         function addToCart (meal) {
             CartService.addToCart(meal);
