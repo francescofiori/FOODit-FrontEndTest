@@ -22,8 +22,6 @@
     /* @ngInject */
     function HeaderCtrl(CartService) {
         var vm = this;
-        console.log('ciao');
-
         vm.addToCart = addToCart;
         vm.removeFromCart = removeFromCart;
 

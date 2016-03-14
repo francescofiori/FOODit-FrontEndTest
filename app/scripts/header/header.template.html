@@ -7,7 +7,22 @@
         <p>{{ mainC.cart.mainCount }} mains</p>
         <div class="order-main-items-container">
             <div class="order-main-items">
-                <div class="order-item" ng-repeat="item in mainC.cart.items | courseFilter:'#course:main_courses'">
+                <div class="order-item" ng-repeat="item in mainC.cart.items | courseFilter:'main'">
+                    <div class="order-item-quantity">
+                        <div style="color: RGB(166, 26, 43)" ng-click="headerC.addToCart(item)">+</div>
+                        <div style="color: white; width: 20px">{{ item.quantity }}</div>
+                        <div style="color: RGB(166, 26, 43)" ng-click="headerC.removeFromCart(item)">-</div>
+                    </div>
+                    <div class="order-item-description">{{ item.name }}</div>
+                    <div class="order-item-price">£{{ item.price * item.quantity | number: 2}}</div>
+                </div>
+            </div>
+        </div>
+
+        <p>{{ mainC.cart.otherCount }} other</p>
+        <div class="order-main-items-container">
+            <div class="order-main-items">
+                <div class="order-item" ng-repeat="item in mainC.cart.items | courseFilter:'other'">
                     <div class="order-item-quantity">
                         <div style="color: RGB(166, 26, 43)" ng-click="headerC.addToCart(item)">+</div>
                         <div style="color: white; width: 20px">{{ item.quantity }}</div>

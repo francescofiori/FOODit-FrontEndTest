@@ -14,14 +14,17 @@
 
     function courseFilter() {
         return function(items, course) {
-            var filtered = [];
+            var filtered = [],
+                notFiltered= [];
             for (var i = 0; i < items.length; i++) {
                 var item = items[i];
-                if (item.tags.indexOf(course) != -1) {
+                if (item.tags.indexOf("#course:main_courses") != -1) {
                     filtered.push(item);
+                } else {
+                    notFiltered.push(item);
                 }
             }
-            return filtered;
+            return course == "main" ? filtered : notFiltered;
         };
     }
 })();
