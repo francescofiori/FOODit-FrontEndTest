@@ -17,6 +17,7 @@
     function MainCtrl(MenuService, CartService) {
         var vm = this;
         vm.menu = {};
+        vm.cart = {};
         vm.cartHasMainItems = cartHasMainItems;
         vm.cartHasOtherItems = cartHasOtherItems;
         vm.cartHasItems = cartHasItems;
@@ -29,7 +30,7 @@
         }
 
         function getMenuItems() {
-            MenuService.get('/data/menu.json').success(function(data) {
+            MenuService.get().success(function(data) {
                 vm.menu = data;
             });
         }
