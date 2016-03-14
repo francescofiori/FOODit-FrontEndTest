@@ -11,7 +11,7 @@
                     <div class="order-item-quantity">
                         <div style="color: RGB(166, 26, 43)" ng-click="headerC.addToCart(item)">+</div>
                         <div style="color: white; width: 20px">{{ item.quantity }}</div>
-                        <div style="color: RGB(166, 26, 43)">-</div>
+                        <div style="color: RGB(166, 26, 43)" ng-click="headerC.removeFromCart(item)">-</div>
                     </div>
                     <div class="order-item-description">{{ item.name }}</div>
                     <div class="order-item-price">£{{ item.price * item.quantity | number: 2}}</div>

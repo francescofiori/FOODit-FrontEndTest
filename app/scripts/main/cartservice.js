@@ -11,7 +11,8 @@
         var service = {
             getCartFromCookie: getCartFromCookie,
             getCart: getCart,
-            addToCart: addToCart
+            addToCart: addToCart,
+            removeFromCart: removeFromCart
             },
             cart;
 
@@ -49,21 +50,24 @@
             cart.cartTotal += parseFloat(meal.price);
             persistToCookie();
         }
-/*
+
         function removeFromCart (meal) {
+            var itemToRemove = -1;
             angular.forEach(cart.items, function(item, key){
                 if (item.id == meal.id) {
-                    if (cart.items[key].quantity > 0) {
+                    if (cart.items[key].quantity > 1) {
                         cart.items[key].quantity--;
                     } else {
                         removeFromCoursesCount(meal.tags);
+                        itemToRemove = key;
                     }
                 }
             });
+            if (itemToRemove != -1) cart.items.splice(itemToRemove, 1);
             cart.cartTotal -= parseFloat(meal.price);
             persistToCookie();
         }
-*/
+
         function addToCoursesCount (item) {
             if (item.indexOf("#course:main_courses") != -1) {
                 cart.mainCount++;

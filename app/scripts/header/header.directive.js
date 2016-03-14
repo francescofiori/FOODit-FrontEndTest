@@ -25,9 +25,14 @@
         console.log('ciao');
 
         vm.addToCart = addToCart;
+        vm.removeFromCart = removeFromCart;
 
         function addToCart (meal) {
             CartService.addToCart(meal);
+        }
+
+        function removeFromCart (meal) {
+            CartService.removeFromCart(meal);
         }
     }
 })();
