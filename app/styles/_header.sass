@@ -9,7 +9,7 @@
     display: flex
     flex-direction: column
     transition: bottom 1s
-    &.open
+    &.openDrawer
         bottom: 0
 
 .header-title
@@ -69,12 +69,13 @@
     order: 1
     flex: auto
     margin: 14px 10px 14px 20px
-    font-size: 1.1em
+    font-size: 0.9em
     font-style: italic
     color: RGB(220, 2, 27)
     border: none
     background-color: white
     border-radius: 3px
+    cursor: pointer
 
 .order-main-items
     border: solid 1px RGB(194, 24, 46)
@@ -89,7 +90,7 @@
     flex-direction: column
     text-align: center
     align-items: stretch
-    font-size: 0.9em
+    font-size: 0.8em
 
 .order-item-description
     background-color: RGB(209, 81, 77)
@@ -102,7 +103,7 @@
     background-color: RGB(209, 81, 77)
     padding: 15px
     color: white
-    font-size: 0.9em
+    font-size: 0.8em
 
 .order-main-items-container
     max-height: 150px
@@ -118,10 +119,18 @@
 
 .header-plus
     color: RGB(166, 26, 43)
+    cursor: pointer
 
 .header-minus
     color: RGB(166, 26, 43)
+    cursor: pointer
 
 .header-quantity
     color: white
     width: 20px
+
+.header-to-open
+    cursor: s-resize
+
+.header-to-close
+    cursor: n-resize

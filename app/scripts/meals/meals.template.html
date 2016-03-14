@@ -23,8 +23,8 @@
             <img ng-if="mealsC.checkTags(meal.tags, 'vegetarian')" src="images/tag--vegetarian.svg">
         </div>
         <div class="meal--text">
-            <p ng-if="!meal.full && (meal.description.split('.').length - 1) > 1" class="description">{{meal.description | wordFilter}} <img ng-click="meal.full = true" src="images/expand-button.svg"></p>
-            <p ng-if="!(meal.description.split('.').length - 1) || (meal.description.split('.').length - 1) == 1 || meal.full" class="description">{{meal.description}}</p>
+            <p ng-if="!meal.full && (meal.description.split('.').length - 1) > 1" class="description" ng-click="meal.full = true" style="cursor: pointer">{{meal.description | wordFilter}} <img src="images/expand-button.svg"></p>
+            <p ng-if="!(meal.description.split('.').length - 1) || (meal.description.split('.').length - 1) == 1 || meal.full" ng-click="meal.full = false" class="description">{{meal.description}}</p>
             <button class="add-to-chart-btn" ng-click="mealsC.addToCart(meal)">Add To Your Order</button>
         </div>
     </li>
