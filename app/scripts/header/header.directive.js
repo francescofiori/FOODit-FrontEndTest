@@ -1,6 +1,13 @@
 (function() {
     'use strict';
 
+    /**
+     * @ngdoc function
+     * @name jstestApp.header.directive:appHeader
+     * @description
+     * # appHeader
+     * Header directive of the jstest App
+     */
     angular
         .module('jstestApp.header')
         .directive('appHeader', appHeader);
