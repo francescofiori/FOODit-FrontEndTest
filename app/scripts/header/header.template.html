@@ -1,6 +1,6 @@
 <div class="header" ng-class="{open: headerC.openOrders}">
     <div class="header-title" ng-click="headerC.openOrders = !headerC.openOrders">
-        <h3>Your order</h3>
+        <h3>Your Order</h3>
         <p>A Delicious Restaurant</p>
     </div>
 
@@ -42,12 +42,14 @@
         <h3 class="text-muted" ng-if="mainC.cart.items.length == 0">It's time to order some delicious food</h3>
         <div class="header-btn-container">
             <button class="text-muted header-confirm-btn"
-                    ng-if="mainC.cart.mainCount > 0 && headerC.openOrders"
+                    ng-if="mainC.cart.items.length > 0 && headerC.openOrders"
                     ng-click="headerC.confirmOrder()">Confirm Your Order</button>
-            <div ng-if="mainC.cart.mainCount > 0 && !headerC.openOrders">
-                <h3 class="text-muted header-courses-count">{{ mainC.cart.mainCount }} main</h3>
+            <div ng-if="mainC.cart.items.length > 0 && !headerC.openOrders">
                 <h3 class="text-muted header-courses-count"
-                    ng-class="{'header-courses-count-no-margin': mainC.cart.mainCount > 0}">{{ mainC.cart.otherCount }} other</h3>
+                    ng-if="mainC.cart.mainCount > 0">{{ mainC.cart.mainCount }} main</h3>
+                <h3 class="text-muted header-courses-count"
+                    ng-class="{'header-courses-count-no-margin': mainC.cart.mainCount > 0}"
+                    ng-if="mainC.cart.otherCount > 0">{{ mainC.cart.otherCount }} other</h3>
             </div>
             <h3 class="text-muted header-price"
                 ng-if="mainC.cart.items.length > 0">£{{ mainC.cart.cartTotal | number:2 }}</h3>
