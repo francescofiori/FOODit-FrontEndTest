@@ -26,6 +26,7 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
+      'bower_components/angular-swipe/dist/angular-swipe.js',
       'app/scripts/app.module.js',
       'app/scripts/main/main.module.js',
       'app/scripts/meals/meals.module.js',
